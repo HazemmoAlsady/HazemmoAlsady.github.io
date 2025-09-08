@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ========== Base & Theme ========== */
 * {
   margin: 0;
@@ -260,9 +259,11 @@ header {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
-  color: #ffffff;
+  color: #ffffff; /* Dark mode default */
   position: relative;
   padding-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .section-title::after {
@@ -275,20 +276,39 @@ header {
   height: 4px;
   background: linear-gradient(90deg, transparent, #8892f8, transparent);
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.light-mode .section-title {
+  color: #2563eb; /* Professional blue for light mode — clear & modern */
+}
+
+.light-mode .section-title::after {
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent); /* Brighter gradient */
+}
+
+.light-title {
+  color: #8892f8 !important;
+}
+
+.light-mode .light-title {
+  color: #2563eb !important; /* Matches section titles for consistency */
 }
 
 .section-subtitle {
-  color: #8892f8;
+  color: #8892f8; /* Dark mode */
   margin-bottom: 3rem;
   text-align: center;
   font-size: 1.1rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 500;
 }
 
-.light-mode .section-title { color: #212529; }
-.light-mode .section-subtitle { color: #0077cc; }
+.light-mode .section-subtitle {
+  color: #4f46e5; /* Vibrant indigo — eye-catching but not harsh */
+}
 
 /* ========== About ========== */
 .about-section {
@@ -747,9 +767,19 @@ footer {
   .navbar-centered { gap: 0.8rem; flex-wrap: wrap; }
   .contact-btn { margin-top: 1rem; }
   .timeline::before { left: 30px; }
-  .timeline-item { width: 100%; left: 0 !important; padding: 2rem 2rem 2rem 90px; }
-  .timeline-item:nth-child(even), .timeline-item:nth-child(odd) { left: 0; }
-  .cta-buttons { flex-direction: column; align-items: center; }
+  .timeline-item { 
+    width: 100%; 
+    left: 0 !important; 
+    padding: 2rem 2rem 2rem 90px; 
+  }
+  .timeline-item:nth-child(even), 
+  .timeline-item:nth-child(odd) { 
+    left: 0; 
+  }
+  .cta-buttons { 
+    flex-direction: column; 
+    align-items: center; 
+  }
 }
 
 @media (max-width: 480px) {
@@ -758,4 +788,6 @@ footer {
   .section-title { font-size: 1.8rem; }
   .tool-item { min-height: 160px; }
   .training-card { padding: 1.5rem; }
+  .service-card h3 { font-size: 1.2rem; }
+  .service-card p { font-size: 0.9rem; }
 }

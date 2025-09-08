@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const toggleBtn = document.getElementById("darkModeToggle");
@@ -60,7 +59,7 @@ async function fetchGitHubRepos() {
   timeline.innerHTML = '<div class="loading">Loading projects...</div>';
 
   try {
-    // ⚠️ FIXED: Removed extra space after /users/
+    // FIXED: Removed extra space after /users/
     const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
     const repos = await response.json();
 
@@ -136,3 +135,4 @@ function getTagsFromRepo(repo) {
   }
 
   return [...new Set(tags)];
+}
